@@ -1,0 +1,14 @@
+---
+title: "Compte rendu sur la validation croisée"
+author: "Manon Mahéo - Valentin Penisson"
+date: "29/09/2021"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Introduction 
+
+Youpi trop bien ce cr
