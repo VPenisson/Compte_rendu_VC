@@ -11,4 +11,35 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Introduction 
 
-Youpi trop bien ce cr
+*l'intérêt de ces approches (à quoi servent-elles ?) en apprentissage statistique supervisé. N.B.: une attention particulière devra être portée à la rigueur des objets et arguments mathématiques invoqués*
+
+
+## Description des méthodes 
+
+*Pour chaque méthode : une fiche descriptive s'appuyant notamment sur un ou des schémas inédits* ;*
+### Validation (croisée) hold out
+
+- Concept
+- Avantages
+- Inconvénients
+
+
+### Validation croisée leave-p-out
+
+- Concept
+- Avantages
+- Inconvénients
+
+Faire une petite partie sur leave-one-out
+
+### Validation croisée k fold
+
+- Concept
+- Avantages
+- Inconvénients
+
+
+## Conclusion
+*les liens éventuels entre les différentes méthodes et des recommandations à destination des practicien.ne.s.*
+
+
