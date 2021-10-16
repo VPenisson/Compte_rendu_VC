@@ -12,7 +12,8 @@ knitr::opts_chunk$set(echo = TRUE)
 ## Introduction 
 
 *l'intérêt de ces approches (à quoi servent-elles ?) en apprentissage statistique supervisé. N.B.: une attention particulière devra être portée à la rigueur des objets et arguments mathématiques invoqués*
-hghhs
+
+MANON MAHEO CHANGEMENTS
 
 ## Description des méthodes 
 
