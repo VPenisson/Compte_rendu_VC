@@ -16,7 +16,7 @@ hghhs
 
 ## Description des méthodes 
 
-*Pour chaque méthode : une fiche descriptive s'appuyant notamment sur un ou des schémas inédits* ;*
+*Pour chaque méthode : une fiche descriptive s'appuyant notamment sur un ou des schémas inédits* 
 ### Validation (croisée) hold out
 
 - Concept
@@ -37,7 +37,6 @@ Faire une petite partie sur leave-one-out
 - Concept
 - Avantages
 - Inconvénients
-
 
 ## Conclusion
 *les liens éventuels entre les différentes méthodes et des recommandations à destination des practicien.ne.s.*
