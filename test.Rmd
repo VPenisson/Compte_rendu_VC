@@ -12,15 +12,11 @@ knitr::opts_chunk$set(echo = TRUE)
 *l'intérêt de ces approches (à quoi servent-elles ?) en apprentissage statistique supervisé. N.B.: une attention particulière devra être portée à la rigueur des objets et arguments mathématiques invoqués*
 
 
-On dispose d'un échantillon de données observées de type entrée-sortie de taille n : $d^n_1 = \left\{(x_1,y_1),...,(x_n,y_n)\right\}$ avec $x_i \in \cal{X}$ quelconque (souvent égal à $\mathbb{R}^d$), $y_i \in \cal{Y}$ pour $i = 1...n $.
 
-L'objectif est de prédire la sortie $y$ associée à une nouvelle entrée $x$, sur la base de $d^n_1$. 
+Une **règle de prédiction (en régression ou discrimination)** est donc la fonction (mesurable) $f : \cal{X} → \cal{Y}$ qui associe la sortie $f(x)$ à l’entrée $x ∈ \cal{X}$.
 
-L'objectif, pour tout algorithme ou modèle statistique est de prédire la sortie $y$ associée à une nouvelle entrée $x$, sur la base de $d^n_1$. Cette sortie peut être quantitative, $\cal{Y} \in mathbb{R}^d' $
 
 On suppose que $d^n_1$ est l’observation d’un $n$-échantillon $D^n_1 = \left\{(X_1,Y_1),...,(X_n,Y_n)\right\}$ d’une loi conjointe $P$ sur $\cal{X} x \cal{Y}$ , totalement inconnue. Mais aussi que x est une observation de la variable X et que (X,Y) est un couple aléatoire de loi conjointe P indépendant de $D^n_1$.
-
-Une **règle de prédiction (régression ou discrimination)** est une fonction (mesurable) $f : \cal{X} → \cal{Y}$ qui associe la sortie $f(x)$ à l’entrée $x ∈ \cal{X}$.
 
 
 

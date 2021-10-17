@@ -15,15 +15,22 @@ knitr::opts_chunk$set(echo = TRUE)
 
 # Introduction à l'estimation de l'erreur de prévision
 
-La performance du modèle statistique ou algorithme statistique s'évalue par un **risque** ou une **erreur de prévision**, dite encore **erreur de généralisation** dans le cas de la régression et de la classification. La mesure de cette performance est importante dans le sens où elle guide dans le choix de la méthode en comparant chacun des modèles. Une mesure de la qualité ou de la performance du modèle permet aussi de considérer la confiance que l'on peut accorder à la prévision du modèle. 
+La performance du modèle statistique ou algorithme statistique s'évalue par un **risque** ou une **erreur de prévision**, dite encore **erreur de généralisation** dans le cas de la régression et de la classification. Une estimation du risque est importante dans le sens où elle guide dans la stratégie de choix de méthodes et de choix de modèles en science des données. Une mesure de la qualité ou de la performance du modèle permet aussi de considérer la confiance que l'on peut accorder à la prévision du modèle. 
 
-<br>
+<br><br>
 
-On considère que l'on dispose d'un **échantillon de données observées de type entrée-sortie** de taille $n$ : $d^n_1 = \left\{(x_1,y_1),...,(x_n,y_n)\right\}$ avec $x_i \in \cal{X}$ quelconque (souvent égal à $\mathbb{R}^d$), $y_i \in \cal{Y}$ pour i = 1...n. 
+On considère que l'on dispose d'un **échantillon de données observées de type entrée-sortie** de taille $n$ : $d^n_1 = \left\{(x_1,y_1),...,(x_n,y_n)\right\}$ avec $x_i \in \cal{X}$ quelconque (souvent égal à $\mathbb{R}^p$), $y_i \in \cal{Y}$ pour i = 1...n. L'objectif, pour tout algorithme ou modèle statistique, est de prédire la sortie $y$ associée à une nouvelle entrée $x$, sur la base de $d^n_1$. Cette sortie peut être quantitative (i.e $\cal{Y} \in \mathbb{R}^d$) et nous sommes en *régression*, ou bien qualitative (i.e $\cal{Y} =$ {1...K} ou $\cal{Y} =$ {-1,1}) et nous parlons de *discrimination/classification supervisée* ou de *discrimination binaire*. Une **règle de prédiction ou un algorithme de prévision (en régression ou en discrimination)** est donc la fonction mesurable $f : \cal{X} \rightarrow \cal{Y}$ qui associe la sortie $f(x)$ à l’entrée $x \in \cal{X}$.
+
+<br><br>
+
+Une fois que la notion de modèle statistique ou de règle de prévision est précisée, le **risque** est défini à partir d'une *fonction perte* associée. Soit $l : \cal{Y} \times \cal{Y} \rightarrow  $
 
 
 
 
+<br><br>
+
+En pratique, ce risque nécessite d'être estimé et différentes stratégies sont proposées.
 
 # Les différentes techniques de ré-échantillonnage
 
