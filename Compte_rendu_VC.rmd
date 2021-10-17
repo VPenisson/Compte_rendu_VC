@@ -27,34 +27,69 @@ Une fois que la notion de modèle statistique ou de règle de prévision est pr�
 
 <br><br>
 
-Une première idée serait d'utiliser le **risque empirique** d'un algorithme de prédiction pour estimer le risque moyen. Néanmoins, ce dernier qui exprime la *qualité d'ajustement du modèle sur l'échantillon observé*, constitue une mesure biaisée de l'erreur de prévision. Celui-ci est lié aux données qui ont servi à l'ajustement du modèle et est d'autant plus faible que le modèle est complexe. Sélectionner la complexité d'un modèle en minimisant le risque empirique conduit à un risque de ***sur-apprentissage (overfitting)***.
-
-<br><br>
- 
-Ainsi, la façon la plus simple d'estimer sans biais ou de biais réduit l'erreur de prévision consiste à utiliser un échantillon indépendant n'ayant pas participé à l'estimation du modèle. Plusieurs stratégies, étudiées ci-dessous, sont proposées pour **éviter d'utiliser les mêmes données pour estimer un modèle et une erreur**. 
+La façon la plus simple d'estimer sans biais ou de biais réduit l'erreur de prévision consiste à utiliser un échantillon indépendant n'ayant pas participé à l'estimation du modèle. Plusieurs stratégies, étudiées ci-dessous, sont proposées pour **éviter d'utiliser les mêmes données pour estimer un modèle et une erreur**. 
 
 <br><br>
 
 # Les différentes techniques de ré-échantillonnage
 
-## Approche de validation croisée ou croisée hold-out
+## Le vocabulaire 
 
-L'**approche de validation croisée hold-out** consiste à séparer l'échantillon de données $d^n_1$ en ***deux*** : un *échantillon d'apprentissage* $d_{n,app}$ pour construire l'algorithme de prédiction et un *échantillon de validation ou de test* $d_{n,tes}$ pour estimer le risque de la règle de prévision. 
+Lors de la sélection d'un modèle, on divise les données en trois différentes parties. Ces dernières sont représentées dans le tableau et la figure ci-dessous : 
+
+```{r echo=FALSE, out.width='100%'}
+knitr::include_graphics('img1.png')
+```
+
+```{r echo=FALSE, out.width='100%'}
+knitr::include_graphics('img2.png')
+```
+
+## La validation croisée 
+**(aussi notée CV pour "Cross-Validation")**
+
+### -> Approche de validation croisée ou croisée hold-out
+
+L'**approche de validation croisée hold-out** consiste à séparer l'échantillon de données $d^n_1$ en ***deux*** : un *échantillon d'apprentissage* $d_{n,app}$ pour construire l'algorithme de prédiction et un *échantillon de validation ou de test* $d_{n,test}$ pour estimer le risque de la règle de prévision. 
 
 ```{r echo=FALSE, out.width='100%'}
 knitr::include_graphics('graph1.png')
 ```
 
-Cette approche nécessite d'avoir un nombre suffisant d'observations dans l'échantillon d'apprentissage pour bien ajuster l'algorithme de prévision ainsi qu'un nombre suffisant d'observations dans l'échantillon de test pour bien estimer l'erreur de l'algorithme. Par exemple, la taille de l'échantillon d'apprentissage peut osciller entre 60% et 90% de la taille totale de l'échantillon.
+Cette approche nécessite d'avoir un nombre suffisant d'observations dans l'échantillon d'apprentissage pour **bien ajuster l'algorithme de prévision** ainsi qu'un nombre suffisant d'observations dans l'échantillon de test **pour bien estimer l'erreur de l'algorithme**.
 
 <br><br>
 
 L'inconvénient de cette approche est que l'erreur est **très dépendante de la partition "Apprentissage/Validation"**. Donc il faut au minimum la reproduire avec plusieurs partitions.
 
-## Approche de validation croisée leave-p-out
+### -> Approche de validation croisée K-fold
 
-## Approche de validation croisée K-fold
+Ici on repète la méthode d'échantillonnage précédente HO sur différentes partitions. Il est plus adapté que le précédent lorsqu'on a peu d'observations. Le choix de K doit être fait par l'utilisateur (souvent K=10).
+On divise l'échantillon en K sous-échantillons, puis on sélectionne un des K échantillons comme ensemble de validation et la réunion des K - 1 autres comme ensemble d'apprentissage.
+On calcule l'erreur (de régression ou de discrimination) sur l'échantillon de validation comme pour l'approche précédente. 
+On répète l'opération K fois pour que chaque sous-échantillon ait été utilisé une fois comme ensemble de test. La moyenne des K erreurs estime alors l'erreur de régression ou de discrimination.
+Erreur relativement faible, mais qui peut soufffrir d'un manque de "brassage" des données
+Plus long mais plus précis, estime mieux, moins de variance
+faire schéma
+
+### -> Approche de validation croisée leave-p-out
+
+leave-on-out : lorsque K=n, on parke de validation croisée leave one out
+inconvénient : complexité algorithme souvent trop grande
 
 ## Algorithme de bootstrap
+ 
+
+
 
 # Conclusion
+
+**Le risque ou l'erreur de généralisation n'indique rien (ou très peu) sur les performances du modèle construit sur la totalité des données.** Il est nécessaire de procéder à des **méthodes de ré-échantillonnage** comme la validation croisée ou le bootstrap. Pour chaque approche, l'erreur en test estime l'erreur du modèle construit sur la partie apprentissage.
+
+<br><br>
+
+Le découpage "Apprentissage/Test" en validation croisée n'est vraiment intéressant que pour les grandes bases de données. La K-validation croisée et le leave-one-out proposent des performances équivalentes en général. Choisir K=10 est un bon compromis pour la validation croisée.
+
+<br><br>
+
+Le bootstrap a en général une variable plus faible que la validation croisée, mais un biais plus fort et on ne peut pas réellement agir dessus. C'est pourquoi, les approches de validation croisée et de bootstrap se valent, surtout quand la taille de l'échantillon augmente. En pratique, les chercheurs privilégient la validation croisée, qui est peut-être plus simple à implémenter.
