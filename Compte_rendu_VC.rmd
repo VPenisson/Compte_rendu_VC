@@ -1,7 +1,7 @@
 ---
-title: "Compte rendu sur la validation croisée"
-author: "Manon Mahéo - Valentin Penisson"
-date: "29/09/2021"
+title: "Qualité de prévision, risque et estimation du risque"
+author: "Manon MAHEO - Valentin PENISSON"
+date: "18/10/2021"
 output: pdf_document
 ---
 
@@ -9,66 +9,30 @@ output: pdf_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## Introduction 
+\begin{center}
+ \rule{0.5\linewidth}{2pt}
+ \end{center}
 
-*l'intérêt de ces approches (à quoi servent-elles ?) en apprentissage statistique supervisé. N.B.: une attention particulière devra être portée à la rigueur des objets et arguments mathématiques invoqués*
+# Introduction à l'estimation de l'erreur de prévision
 
-La performance du modèl te ou algorithme issu d’une méthode d’appren- tissage s’évalue par un risque ou erreur de prévision, dite encore capacité de généralisation 
+La performance du modèle statistique ou algorithme statistique s'évalue par un **risque** ou une **erreur de prévision**, dite encore **erreur de généralisation** dans le cas de la régression et de la classification. La mesure de cette performance est importante dans le sens où elle guide dans le choix de la méthode en comparant chacun des modèles. Une mesure de la qualité ou de la performance du modèle permet aussi de considérer la confiance que l'on peut accorder à la prévision du modèle. 
 
-La 
+<br>
 
-
-
-
-
-propriétés du risque ou erreur de prévision ou er- reur de généralisation dans le cas de la régression et de la clas- sification
-
-On dispose d'un échantillon de données observées de type entrée-sortie de taille n : $d^n_1 = \left\{(x_1,y_1),...,(x_n,y_n)\right\}$ avec $x_i \in \cal{X}$ quelconque (souvent égal à $\mathbb{R}^d$), $y_i \in \cal{Y}$ pour $i = 1...n $.
-
-L'objectif est de prédire la sortie $y$ associée à une nouvelle entrée $x$, sur la base de $d^n_1$. 
-
-On suppose que $d^n_1$ est l’observation d’un $n$-échantillon $D^n_1 = \left\{(X_1,Y_1),...,(X_n,Y_n)\right\}$ d’une loi conjointe $P$ sur $\cal{X} x \cal{Y}$ , totalement inconnue. Mais aussi que x est une observation de la variable X et que (X,Y) est un couple aléatoire de loi conjointe P indépendant de $D^n_1$.
-
-Une **règle de prédiction (régression ou discrimination)** est une fonction (mesurable) $f : \cal{X} → \cal{Y}$ qui associe la sortie $f(x)$ à l’entrée $x ∈ \cal{X}$.
+On considère que l'on dispose d'un **échantillon de données observées de type entrée-sortie** de taille $n$ : $d^n_1 = \left\{(x_1,y_1),...,(x_n,y_n)\right\}$ avec $x_i \in \cal{X}$ quelconque (souvent égal à $\mathbb{R}^d$), $y_i \in \cal{Y}$ pour i = 1...n. 
 
 
 
-Dans tous les cas, ces règles optimales dépendent de P !
-􏰣→ Nécessité de construire des règles - ou algorithmes ou modèle - de prédiction qui ne dépendent pas de P, mais de D1n (et de paramètres à ajuster).
-
-$\boxed{p = 2\pi r}$
 
 
-Pour estimer le risque moyen 
+# Les différentes techniques de ré-échantillonnage
 
+## Approche de validation croisée hold-out
 
-## Description des méthodes 
+## Approche de validation croisée p out
 
-*Pour chaque méthode : une fiche descriptive s'appuyant notamment sur un ou des schémas inédits* ;*
-### Validation (croisée) hold out
+## Approche de validation croisée K fold
 
-- Concept
-- Avantages
-- Inconvénients
+## Algorithme de Leave-One-Out bootstrap
 
-
-### Validation croisée leave-p-out
-
-- Concept
-- Avantages
-- Inconvénients
-
-Faire une petite partie sur leave-one-out
-
-### Validation croisée k fold
-
-- Concept
-- Avantages
-- Inconvénients
-
-### Bootstrap
-
-## Conclusion
-*les liens éventuels entre les différentes méthodes et des recommandations à destination des practicien.ne.s.*
-
-
+# Conclusion
