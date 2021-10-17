@@ -1,0 +1,63 @@
+---
+title: "test"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Introduction 
+
+*l'intérêt de ces approches (à quoi servent-elles ?) en apprentissage statistique supervisé. N.B.: une attention particulière devra être portée à la rigueur des objets et arguments mathématiques invoqués*
+
+## Description des méthodes 
+
+*Pour chaque méthode : une fiche descriptive s'appuyant notamment sur un ou des schémas inédits* 
+
+
+
+### Validation croisée leave-p-out
+
+La seconde approche est la validation croisée leave-p-out. L'idée consiste à choisir p un nombre d'individus pour choisir constituer une combinaison de (n p) échantillons de taille p. Ces échantillons constitués, on en choisit un comme échantillon de validation. L'ensemble des autres échantillons constitueront l'échantillon d'apprentissage. Lorsque le modèle est construit sur l'échantillon d'apprentissage, il faut mesurer l'estimation du risque moyen avec l'échantillon de validation. On répète ensuite ce processus sur l'ensemble des échantillons constitués. A l'issue, on fait la moyenne des tous les R_k pour estimer le risque moyen 'total'.
+ 
+Une dérivée de cette méthode  appelée validation croisée leave-one-out consiste à choisir p = 1. La validation se fait donc sur un seul individu et l'apprentissage sur tous les individus sauf celui utilsé pour la validation.
+ 
+- Avantages
+- Inconvénients
+
+Faire une petite partie sur leave-one-out
+
+### -> Approche de validation croisée K-fold
+
+La troisième approche utilisée pour estimer le risque moyen est la validation croisée K-fold. Cette approche consiste à répéter la validation croisée HO sur plusieurs partitions de notre jeu de données. Le choix de K doit être fait par l'utilisateur (souvent K=10).
+Pour commencer, l'échantillon est séparé en K sous-échantillons de taille égale. On sélectionne ensuite un des K échantillons comme ensemble de validation et la réunion des K - 1 autres comme ensemble d'apprentissage. Après ajustement du modèle sur l'échantillon d'aprentissage, on calcule l'estimation du risque moyen $R_k$ pour le bloc K sur l'échantillon de validation comme pour l'approche de validation croisée Hold-Out . On répète l'opération sur chaque K de façon à ce que  chaque sous-échantillon ait été utilisé une fois comme ensemble de validation. Enfin on calcule la moyenne des k risques moyens $R_k$ estimé pour obtenir l'estimation "complète du risque moyen.
+
+
+L'exemple ci dessous schématise l'estimation du risque moyen par validation croisée 3 fold.
+
+Mettre les trois étapes de schema 
+
+Ces trois étapes effectuées, il est nécessaire de faire la moyenne des trois $R_k$.
+
+Cette méthode d'apprentissage par validation croisée présente l'inconvénient de parfois être long à mettre en place et peut également souffrir d'un manque de brassage dans les données. Cependant cette méthode d'estimation du risque moyen a l'avantage de bien estimer celui-ci et donc de diiminuer sa variance.
+
+
+
+### Bootstrap
+### -> Approche de validation croisée leave-p-out
+
+leave-one-out : lorsque K=n, on parke de validation croisée leave one out
+inconvénient : complexité algorithme souvent trop grande
+
+## Algorithme de bootstrap
+
+Une autre approche que la validation croisée est celle du **bootstrap**. Il s'agit d'approcher par simulation *(Monte Carlo)* la distribution d'un estimateur lorsque l'on ne connaît pas la loi de l'échantillon, ou lorsqu'on ne peut pas supposer qu'elle est gaussienne.
+
+<br><br>
+
+On appelle **échantillon bootstrap** le tirage de n individus pris au hasard avec remise parmis les n individus de départ. 
+
+
+## Conclusion
+*les liens éventuels entre les différentes méthodes et des recommandations à destination des practicien.ne.s.*
