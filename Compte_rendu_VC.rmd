@@ -79,16 +79,11 @@ inconvénient : complexité algorithme souvent trop grande
 
 ## Algorithme de bootstrap
 
-Une autre approche que la validation croisée est celle du **bootstrap**. Il s'agit d'approcher par simulation *(Monte Carlo)* la distribution d'un estimateur lorsque l'on ne connaît pas la loi de l'échantillon.
+Une autre approche que la validation croisée est celle du **bootstrap**. Il s'agit d'approcher par simulation *(Monte Carlo)* la distribution d'un estimateur lorsque l'on ne connaît pas la loi de l'échantillon, ou lorsqu'on ne peut pas supposer qu'elle est gaussienne.
 
 <br><br>
 
-On appelle échantillon bootstrap le tirage de n individus pris au hasard avec remise parmis les n individus de départ. 
-
-Le principe fondamental de cette technique de ré-échantillonnage est de substituer, à la distribution de probabilité inconnue F , dont est issu l’échan- tillon d’apprentissage, la distribution empirique Fn qui donne un poids 1/n à chaque réalisation. Ainsi on obtient un échantillon de taille n dit échantillon bootstrap selon la distribution empirique Fn par n tirages aléatoires avec re- mise parmi les n observations initiales.
-
-Echantillon bootstrap : tirage de n individus pris au hasard avec remise parmis les n individus de départ
-
+On appelle **échantillon bootstrap** le tirage de n individus pris au hasard avec remise parmis les n individus de départ. 
 
 
 # Conclusion
