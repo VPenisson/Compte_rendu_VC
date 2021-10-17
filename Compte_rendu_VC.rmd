@@ -15,6 +15,12 @@ knitr::opts_chunk$set(echo = TRUE)
 
 
 
+
+
+on ne connait pas la loi (X,Y) donc probabilités pour connaitre le score optimal, le risque est impossible
+il faut estimer ces probabilités à partir d'un échantillon i.i.d Dn=(x1,y1)...(xn,yn) et déduire un estimateur g de g* -> méthodes de validation croisée et HO
+
+
 ## Description des méthodes 
 
 *Pour chaque méthode : une fiche descriptive s'appuyant notamment sur un ou des schémas inédits* ;*
