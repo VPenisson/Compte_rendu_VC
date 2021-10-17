@@ -23,7 +23,7 @@ On considère que l'on dispose d'un **échantillon de données observées de typ
 
 <br><br>
 
-Une fois que la notion de modèle statistique ou de règle de prévision est précisée, le **risque** est défini à partir d'une *fonction perte* associée. Soit $l: \cal{Y} \times \cal{Y} \rightarrow \mathbb{R}$ une fonction de perte, le **risque ou l'erreur de généralisation** d'une règle de prédiction f est défini par $R_p(f) = \mathbb{E}_{(X,Y)} \left[ l(Y,f(X)\right]$. En pratique, ce risque nécessite d'être estimé et différentes stratégies sont proposées puisque l'on suppose que $d^n_1$ est l'observation d’un n-échantillon $D^n_1 = \left\{(X_1,Y_1),...,(X_n,Y_n)\right\}$ d’une loi conjointe P sur $\cal{X} \times \cal{Y}$, totalement inconnue et que x est une observation de la variable X, (X,Y) étant un couple aléatoire de loi conjointe P indépendant de $D^n_1$.
+Une fois que la notion de modèle statistique ou de règle de prévision est précisée, le **risque** est défini à partir d'une *fonction perte* associée. Soit $l: \cal{Y} \times \cal{Y} \rightarrow \mathbb{R}$ une fonction de perte, le **risque ou l'erreur de généralisation** d'une règle de prédiction f est défini par $R_p(f) = \mathbb{E}_{(X,Y)} \left[ l(Y,f(X)\right]$. En pratique, ce risque nécessite d'être estimé et différentes stratégies sont proposées puisque l'on suppose que $d^n_1$ est l'observation d’un n-échantillon $D^n_1 = \left\{(X_1,Y_1),...,(X_n,Y_n)\right\}$ d’une loi conjointe P sur $\cal{X} \times \cal{Y}$, totalement inconnue et que x est une observation de la variable X, (X,Y) étant un couple aléatoire de loi conjointe P indépendant de $D^n_1$ *(modèle statistique non paramétrique)*.
 
 <br><br>
 
@@ -78,7 +78,16 @@ leave-on-out : lorsque K=n, on parke de validation croisée leave one out
 inconvénient : complexité algorithme souvent trop grande
 
 ## Algorithme de bootstrap
- 
+
+Une autre approche que la validation croisée est celle du **bootstrap**. Il s'agit d'approcher par simulation *(Monte Carlo)* la distribution d'un estimateur lorsque l'on ne connaît pas la loi de l'échantillon.
+
+<br><br>
+
+On appelle échantillon bootstrap le tirage de n individus pris au hasard avec remise parmis les n individus de départ. 
+
+Le principe fondamental de cette technique de ré-échantillonnage est de substituer, à la distribution de probabilité inconnue F , dont est issu l’échan- tillon d’apprentissage, la distribution empirique Fn qui donne un poids 1/n à chaque réalisation. Ainsi on obtient un échantillon de taille n dit échantillon bootstrap selon la distribution empirique Fn par n tirages aléatoires avec re- mise parmi les n observations initiales.
+
+Echantillon bootstrap : tirage de n individus pris au hasard avec remise parmis les n individus de départ
 
 
 
@@ -92,4 +101,4 @@ Le découpage "Apprentissage/Test" en validation croisée n'est vraiment intére
 
 <br><br>
 
-Le bootstrap a en général une variable plus faible que la validation croisée, mais un biais plus fort et on ne peut pas réellement agir dessus. C'est pourquoi, les approches de validation croisée et de bootstrap se valent, surtout quand la taille de l'échantillon augmente. En pratique, les chercheurs privilégient la validation croisée, qui est peut-être plus simple à implémenter.
+Le bootstrap a en général une variable plus faible que la validation croisée, mais un biais plus fort et on ne peut pas réellement agir dessus. C'est pourquoi, les approches de validation croisée et de bootstrap se valent, surtout quand la taille de l'échantillon augmente. En pratique, les chercheurs privilégient la validation croisée, qui est peut-être plus simple à implémenter. Néanmoins, cet outil joue un rôle central dans les algorithmes récents de combinaison de modèles. Il ne peut être négligé.
