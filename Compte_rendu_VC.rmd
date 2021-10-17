@@ -13,7 +13,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 *l'intérêt de ces approches (à quoi servent-elles ?) en apprentissage statistique supervisé. N.B.: une attention particulière devra être portée à la rigueur des objets et arguments mathématiques invoqués*
 
-MANON MAHEO CHANGEMENTS
+
 
 ## Description des méthodes 
 
@@ -39,6 +39,7 @@ Faire une petite partie sur leave-one-out
 - Avantages
 - Inconvénients
 
+### Bootstrap
 
 ## Conclusion
 *les liens éventuels entre les différentes méthodes et des recommandations à destination des practicien.ne.s.*
