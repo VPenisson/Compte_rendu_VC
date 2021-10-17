@@ -19,7 +19,7 @@ La performance du modèle statistique ou algorithme statistique s'évalue par un
 
 <br><br>
 
-On considère que l'on dispose d'un **échantillon de données observées de type entrée-sortie** de taille $n$ : $d^n_1 = \left\{(x_1,y_1),...,(x_n,y_n)\right\}$ avec $x_i \in \cal{X}$ quelconque (souvent égal à $\mathbb{R}^p$), $y_i \in \cal{Y}$ pour i = 1...n. L'objectif, pour tout algorithme ou modèle statistique, est de prédire la sortie $y$ associée à une nouvelle entrée $x$, sur la base de $d^n_1$. Cette sortie peut être quantitative (i.e $\cal{Y} \in \mathbb{R}^d$) et nous sommes en *régression*, ou bien qualitative (i.e $\cal{Y} =$ {1...K} ou $\cal{Y} =$ {-1,1}) et nous parlons de *discrimination/classification supervisée* ou de *discrimination binaire*. Nous nous plaçons ici dans le cadre de l'apprentissage statistique supervisé. Une **règle de prédiction ou un algorithme de prévision (en régression ou en discrimination)** est donc la fonction mesurable $f : \cal{X} \rightarrow \cal{Y}$ qui associe la sortie $f(x)$ à l’entrée $x \in \cal{X}$.
+On considère que l'on dispose d'un **échantillon de données observées de type entrée-sortie** de taille $n$ : $d^n_1 = \left\{(x_1,y_1),...,(x_n,y_n)\right\}$ avec $x_i \in \cal{X}$ quelconque (souvent égal à $\mathbb{R}^p$), $y_i \in \cal{Y}$ pour i = 1...n. L'objectif, pour tout algorithme ou modèle statistique, est de prédire la sortie $y$ associée à une nouvelle entrée $x$, sur la base de $d^n_1$. Cette sortie peut être quantitative (i.e $\cal{Y} \in \mathbb{R}^d$) et nous sommes en *régression*, ou bien qualitative (i.e $\cal{Y} =$ {1...K} ou $\cal{Y} =$ {-1,1}) et nous parlons de *discrimination/classification supervisée* ou de *discrimination binaire*. Nous nous plaçons ici dans le cadre de l'apprentissage statistique supervisé c'est-à-dire que l'on connaît ce que l'on doit expliquer (i.e les sorties $y_i$). Une **règle de prédiction ou un algorithme de prévision (en régression ou en discrimination)** est donc la fonction mesurable $f : \cal{X} \rightarrow \cal{Y}$ qui associe la sortie $f(x)$ à l’entrée $x \in \cal{X}$.
 
 <br><br>
 
@@ -37,7 +37,19 @@ Ainsi, la façon la plus simple d'estimer sans biais ou de biais réduit l'erreu
 
 # Les différentes techniques de ré-échantillonnage
 
-## Approche de validation croisée hold-out
+## Approche de validation croisée ou croisée hold-out
+
+L'**approche de validation croisée hold-out** consiste à séparer l'échantillon de données $d^n_1$ en ***deux*** : un *échantillon d'apprentissage* $d_{n,app}$ pour construire l'algorithme de prédiction et un *échantillon de validation ou de test* $d_{n,tes}$ pour estimer le risque de la règle de prévision. 
+
+```{r echo=FALSE, out.width='100%'}
+knitr::include_graphics('graph1.png')
+```
+
+Cette approche nécessite d'avoir un nombre suffisant d'observations dans l'échantillon d'apprentissage pour bien ajuster l'algorithme de prévision ainsi qu'un nombre suffisant d'observations dans l'échantillon de test pour bien estimer l'erreur de l'algorithme. Par exemple, la taille de l'échantillon d'apprentissage peut osciller entre 60% et 90% de la taille totale de l'échantillon.
+
+<br><br>
+
+L'inconvénient de cette approche est que l'erreur est **très dépendante de la partition "Apprentissage/Validation"**. Donc il faut au minimum la reproduire avec plusieurs partitions.
 
 ## Approche de validation croisée leave-p-out
 
