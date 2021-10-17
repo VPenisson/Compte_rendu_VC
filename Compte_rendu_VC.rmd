@@ -13,12 +13,33 @@ knitr::opts_chunk$set(echo = TRUE)
 
 *l'intérêt de ces approches (à quoi servent-elles ?) en apprentissage statistique supervisé. N.B.: une attention particulière devra être portée à la rigueur des objets et arguments mathématiques invoqués*
 
+La performance du modèl te ou algorithme issu d’une méthode d’appren- tissage s’évalue par un risque ou erreur de prévision, dite encore capacité de généralisation 
+
+La 
 
 
 
 
-on ne connait pas la loi (X,Y) donc probabilités pour connaitre le score optimal, le risque est impossible
-il faut estimer ces probabilités à partir d'un échantillon i.i.d Dn=(x1,y1)...(xn,yn) et déduire un estimateur g de g* -> méthodes de validation croisée et HO
+
+propriétés du risque ou erreur de prévision ou er- reur de généralisation dans le cas de la régression et de la clas- sification
+
+On dispose d'un échantillon de données observées de type entrée-sortie de taille n : $d^n_1 = \left\{(x_1,y_1),...,(x_n,y_n)\right\}$ avec $x_i \in \cal{X}$ quelconque (souvent égal à $\mathbb{R}^d$), $y_i \in \cal{Y}$ pour $i = 1...n $.
+
+L'objectif est de prédire la sortie $y$ associée à une nouvelle entrée $x$, sur la base de $d^n_1$. 
+
+On suppose que $d^n_1$ est l’observation d’un $n$-échantillon $D^n_1 = \left\{(X_1,Y_1),...,(X_n,Y_n)\right\}$ d’une loi conjointe $P$ sur $\cal{X} x \cal{Y}$ , totalement inconnue. Mais aussi que x est une observation de la variable X et que (X,Y) est un couple aléatoire de loi conjointe P indépendant de $D^n_1$.
+
+Une **règle de prédiction (régression ou discrimination)** est une fonction (mesurable) $f : \cal{X} → \cal{Y}$ qui associe la sortie $f(x)$ à l’entrée $x ∈ \cal{X}$.
+
+
+
+Dans tous les cas, ces règles optimales dépendent de P !
+􏰣→ Nécessité de construire des règles - ou algorithmes ou modèle - de prédiction qui ne dépendent pas de P, mais de D1n (et de paramètres à ajuster).
+
+$\boxed{p = 2\pi r}$
+
+
+Pour estimer le risque moyen 
 
 
 ## Description des méthodes 
