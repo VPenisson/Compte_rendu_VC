@@ -12,23 +12,6 @@ knitr::opts_chunk$set(echo = TRUE)
 *l'intérêt de ces approches (à quoi servent-elles ?) en apprentissage statistique supervisé. N.B.: une attention particulière devra être portée à la rigueur des objets et arguments mathématiques invoqués*
 
 
-
-Une **règle de prédiction (en régression ou discrimination)** est donc la fonction (mesurable) $f : \cal{X} → \cal{Y}$ qui associe la sortie $f(x)$ à l’entrée $x ∈ \cal{X}$.
-
-
-On suppose que $d^n_1$ est l’observation d’un $n$-échantillon $D^n_1 = \left\{(X_1,Y_1),...,(X_n,Y_n)\right\}$ d’une loi conjointe $P$ sur $\cal{X} x \cal{Y}$ , totalement inconnue. Mais aussi que x est une observation de la variable X et que (X,Y) est un couple aléatoire de loi conjointe P indépendant de $D^n_1$.
-
-
-
-Dans tous les cas, ces règles optimales dépendent de P !
-􏰣→ Nécessité de construire des règles - ou algorithmes ou modèle - de prédiction qui ne dépendent pas de P, mais de D1n (et de paramètres à ajuster).
-
-$\boxed{p = 2\pi r}$
-
-
-Pour estimer le risque moyen 
-
-
 ## Description des méthodes 
 
 *Pour chaque méthode : une fiche descriptive s'appuyant notamment sur un ou des schémas inédits* ;*

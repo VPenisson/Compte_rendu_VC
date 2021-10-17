@@ -19,27 +19,30 @@ La performance du modèle statistique ou algorithme statistique s'évalue par un
 
 <br><br>
 
-On considère que l'on dispose d'un **échantillon de données observées de type entrée-sortie** de taille $n$ : $d^n_1 = \left\{(x_1,y_1),...,(x_n,y_n)\right\}$ avec $x_i \in \cal{X}$ quelconque (souvent égal à $\mathbb{R}^p$), $y_i \in \cal{Y}$ pour i = 1...n. L'objectif, pour tout algorithme ou modèle statistique, est de prédire la sortie $y$ associée à une nouvelle entrée $x$, sur la base de $d^n_1$. Cette sortie peut être quantitative (i.e $\cal{Y} \in \mathbb{R}^d$) et nous sommes en *régression*, ou bien qualitative (i.e $\cal{Y} =$ {1...K} ou $\cal{Y} =$ {-1,1}) et nous parlons de *discrimination/classification supervisée* ou de *discrimination binaire*. Une **règle de prédiction ou un algorithme de prévision (en régression ou en discrimination)** est donc la fonction mesurable $f : \cal{X} \rightarrow \cal{Y}$ qui associe la sortie $f(x)$ à l’entrée $x \in \cal{X}$.
+On considère que l'on dispose d'un **échantillon de données observées de type entrée-sortie** de taille $n$ : $d^n_1 = \left\{(x_1,y_1),...,(x_n,y_n)\right\}$ avec $x_i \in \cal{X}$ quelconque (souvent égal à $\mathbb{R}^p$), $y_i \in \cal{Y}$ pour i = 1...n. L'objectif, pour tout algorithme ou modèle statistique, est de prédire la sortie $y$ associée à une nouvelle entrée $x$, sur la base de $d^n_1$. Cette sortie peut être quantitative (i.e $\cal{Y} \in \mathbb{R}^d$) et nous sommes en *régression*, ou bien qualitative (i.e $\cal{Y} =$ {1...K} ou $\cal{Y} =$ {-1,1}) et nous parlons de *discrimination/classification supervisée* ou de *discrimination binaire*. Nous nous plaçons ici dans le cadre de l'apprentissage statistique supervisé. Une **règle de prédiction ou un algorithme de prévision (en régression ou en discrimination)** est donc la fonction mesurable $f : \cal{X} \rightarrow \cal{Y}$ qui associe la sortie $f(x)$ à l’entrée $x \in \cal{X}$.
 
 <br><br>
 
-Une fois que la notion de modèle statistique ou de règle de prévision est précisée, le **risque** est défini à partir d'une *fonction perte* associée. Soit $l : \cal{Y} \times \cal{Y} \rightarrow  $
-
-
-
+Une fois que la notion de modèle statistique ou de règle de prévision est précisée, le **risque** est défini à partir d'une *fonction perte* associée. Soit $l: \cal{Y} \times \cal{Y} \rightarrow \mathbb{R}$ une fonction de perte, le **risque ou l'erreur de généralisation** d'une règle de prédiction f est défini par $R_p(f) = \mathbb{E}_{(X,Y)} \left[ l(Y,f(X)\right]$. En pratique, ce risque nécessite d'être estimé et différentes stratégies sont proposées puisque l'on suppose que $d^n_1$ est l'observation d’un n-échantillon $D^n_1 = \left\{(X_1,Y_1),...,(X_n,Y_n)\right\}$ d’une loi conjointe P sur $\cal{X} \times \cal{Y}$, totalement inconnue et que x est une observation de la variable X, (X,Y) étant un couple aléatoire de loi conjointe P indépendant de $D^n_1$.
 
 <br><br>
 
-En pratique, ce risque nécessite d'être estimé et différentes stratégies sont proposées.
+Une première idée serait d'utiliser le **risque empirique** d'un algorithme de prédiction pour estimer le risque moyen. Néanmoins, ce dernier qui exprime la *qualité d'ajustement du modèle sur l'échantillon observé*, constitue une mesure biaisée de l'erreur de prévision. Celui-ci est lié aux données qui ont servi à l'ajustement du modèle et est d'autant plus faible que le modèle est complexe. Sélectionner la complexité d'un modèle en minimisant le risque empirique conduit à un risque de ***sur-apprentissage (overfitting)***.
+
+<br><br>
+ 
+Ainsi, la façon la plus simple d'estimer sans biais ou de biais réduit l'erreur de prévision consiste à utiliser un échantillon indépendant n'ayant pas participé à l'estimation du modèle. Plusieurs stratégies, étudiées ci-dessous, sont proposées pour **éviter d'utiliser les mêmes données pour estimer un modèle et une erreur**. 
+
+<br><br>
 
 # Les différentes techniques de ré-échantillonnage
 
 ## Approche de validation croisée hold-out
 
-## Approche de validation croisée p out
+## Approche de validation croisée leave-p-out
 
-## Approche de validation croisée K fold
+## Approche de validation croisée K-fold
 
-## Algorithme de Leave-One-Out bootstrap
+## Algorithme de bootstrap
 
 # Conclusion
