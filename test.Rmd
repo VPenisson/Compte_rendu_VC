@@ -39,5 +39,3 @@ Faire une petite partie sur leave-one-out
 
 ## Conclusion
 *les liens éventuels entre les différentes méthodes et des recommandations à destination des practicien.ne.s.*
-
-
