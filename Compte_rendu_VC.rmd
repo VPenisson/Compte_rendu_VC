@@ -76,7 +76,7 @@ L'inconvénient de cette approche est que l'erreur est **très dépendante de la
 Ici on repète la méthode d'échantillonnage précédente HO sur différentes partitions. Il est plus adapté que le précédent lorsqu'on a peu d'observations. Le choix de K doit être fait par l'utilisateur (souvent K=10).
 On divise l'échantillon en K sous-échantillons, puis on sélectionne un des K échantillons comme ensemble de validation et la réunion des K - 1 autres comme ensemble d'apprentissage.
 On calcule l'erreur (de régression ou de discrimination) sur l'échantillon de validation comme pour l'approche précédente. 
-On répète l'opération K fois pour que chaque sous-échantillon ait été utilisé une fois comme ensemble de test. La moyenne des K erreurs estime alors l'erreur de régression ou de discrimination.
+On répète l'opération K fois pour que chaque sous-échantillon ait été utilisé une fois comme ensemble de validation. La moyenne des K erreurs estime alors l'erreur de régression ou de discrimination.
 Erreur relativement faible, mais qui peut soufffrir d'un manque de "brassage" des données
 Plus long mais plus précis, estime mieux, moins de variance
 faire schéma

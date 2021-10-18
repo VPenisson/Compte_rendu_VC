@@ -21,7 +21,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 La seconde approche est la validation croisée leave-p-out. L'idée consiste à choisir p un nombre d'individus pour choisir constituer une combinaison de (n p) échantillons de taille p. Ces échantillons constitués, on en choisit un comme échantillon de validation. L'ensemble des autres échantillons constitueront l'échantillon d'apprentissage. Lorsque le modèle est construit sur l'échantillon d'apprentissage, il faut mesurer l'estimation du risque moyen avec l'échantillon de validation. On répète ensuite ce processus sur l'ensemble des échantillons constitués. A l'issue, on fait la moyenne des tous les R_k pour estimer le risque moyen 'total'.
  
-Une dérivée de cette méthode  appelée validation croisée leave-one-out consiste à choisir p = 1. La validation se fait donc sur un seul individu et l'apprentissage sur tous les individus sauf celui utilsé pour la validation.
+Une particularité de cette méthode appelée validation croisée leave-one-out consiste à choisir p = 1. La validation se fait donc sur un seul individu et l'apprentissage sur tous les autres individus. Cette méthode est principalement utilisée lorsque le jeu de données est de petite taille.
  
 - Avantages
 - Inconvénients
