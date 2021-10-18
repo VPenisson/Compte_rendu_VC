@@ -26,6 +26,9 @@ Une particularité de cette méthode appelée validation croisée leave-one-out 
 - Avantages
 - Inconvénients
 
+
+
+
 Faire une petite partie sur leave-one-out
 
 ### -> Approche de validation croisée K-fold
@@ -34,7 +37,7 @@ La troisième approche utilisée pour estimer le risque moyen est la validation 
 Pour commencer, l'échantillon est séparé en K sous-échantillons de taille égale. On sélectionne ensuite un des K échantillons comme ensemble de validation et la réunion des K - 1 autres comme ensemble d'apprentissage. Après ajustement du modèle sur l'échantillon d'aprentissage, on calcule l'estimation du risque moyen $R_k$ pour le bloc K sur l'échantillon de validation comme pour l'approche de validation croisée Hold-Out . On répète l'opération sur chaque K de façon à ce que  chaque sous-échantillon ait été utilisé une fois comme ensemble de validation. Enfin on calcule la moyenne des k risques moyens $R_k$ estimé pour obtenir l'estimation "complète du risque moyen.
 
 
-L'exemple ci dessous schématise l'estimation du risque moyen par validation croisée 3 fold.
+L'exemple ci-dessous schématise l'estimation du risque moyen par validation croisée 3 fold.
 
 Mettre les trois étapes de schema 
 
